@@ -1,48 +1,81 @@
-[tool / workflow name]
+scRNAseq Processing Workflows
 ==============
 
-> ## Delete this section when the first version of the documentation is complete
-> You can make use of this template repository as a base template for a new GitHub repository.
->
-> **General information about the guidelines**
-- This **template** repository contains a set of guidelines for documenting bioinformatics tools and workflows.
-- There is a How-to-Guide to using this repository available here: https://australianbiocommons.github.io/how-to-guides/documentation/DocumentationGuidelines
-- The initial version uploaded to GitHub was informed by current documentation practices and structures used in the GitHub community.
-- Typical files are included, such as a `LICENSE`, `CITATION.cff` and `change_log.md`
-- These guidelines will be further developed as needed to meet the requirements of the Australian BioCommons community.
+# General recommendations
+
+This document describes how to use some scanpy-based scRNAseq workflows on galaxy Australia. 
+
+The aim of these workflows is to handle the routine ‘boring’ part of single cell RNAseq data processing. It will produces an ‘AnnData’ object, which can then be used as a base for downstream analysis – either within galaxy or outside of it. AnnData is a standard format used by the ‘scanpy’ python package. 
+
+These workflows represent just one way of processing data for a ‘typical’ scRNAseq experiment – there are many other options!  
 
 ---
 
-# General recommendations for using [tool / workflow name]
+This document describes 3 sub-workflows for processing single cell RNAseq data with scanpy 
 
-> Recommendations on using the workflow: for example, based on data set size, infrastructure suitability.
+Load counts matrix:  
 
----
+https://usegalaxy.org.au/u/s.williams/w/scrnaseq-load-counts-matrix-subworkflow   
 
-# Resources available here
+This workflow adds a sample name, which enables multi-sample analyses 
 
-This repository contains structured documentation for ```[workflow name]```, including links to existing repositories and community resources, as well as a description of the optimisations achieved on the following compute systems:
+Single cell QC:  
 
-- [system name](infrastructure_optimisation.md)
-- ...
+https://usegalaxy.org.au/u/s.williams/w/scrnaseqcellqc   
 
----
+This workflow generates some basic QC plots and applies filtering 
+
+Single cell QC to basic processing:  
+
+https://usegalaxy.org.au/u/s.williams/w/copy-of-scanpyqcplusdraft  
+
+This generates a UMAP, does clustering and calculates cluster marker genes. 
+
+ 
+
+For single sample experiments, there is a streamlined workflow that runs all 3 sub-workflows all at once 
+
+Single sample workflow:  
+
+https://usegalaxy.org.au/u/s.williams/w/copy-of-scrnaseqcountsmatrixtoqc  
+
+ 
+
+# Tutorials and reference 
+
+ 
+
+For more general information about single cell RNAseq processing on galaxy; there are some excellent tutorials to be found here on the galaxy training website:  
+
+https://training.galaxyproject.org/training-material/topics/single-cell/ 
+
+The workflow described here is heavily influenced by this tutorial; https://training.galaxyproject.org/training-material/topics/single-cell/tutorials/scrna-scanpy-pbmc3k/tutorial.html  
+
+ 
+For more general information on using galaxy: https://training.galaxyproject.org/training-material/  
+
+ 
+And for more information on the principals of single cell analysis 
+
+The Scanpy preprocessing and clustering tutorial 
+
+https://scanpy-tutorials.readthedocs.io/en/latest/pbmc3k.html 
+
+This page describes the scanpy code used within galaxy. Even if you ignore the code, it works through many of the plots these workflows generate.  
+
+Ochestrating Single cell Analysis with Bioconductor https://bioconductor.org/books/release/OSCA/ 
+
+This is an extensive book that doesn’t using galaxy or scanpy, but does describe why various analysis steps are needed. 
+
+
+# How To
+
+
+...
+
 
 # Attributions
 
-The guideline template is supported by the Australian BioCommons via Bioplatforms Australia funding, the Australian Research Data Commons (https://doi.org/10.47486/PL105) and the Queensland Government RICF programme. Bioplatforms Australia and the Australian Research Data Commons are enabled by the National Collaborative Research Infrastructure Strategy (NCRIS).
-
-The BioCommons would also like to acknowledge the contributions of the following individuals and institutions to these documentation guidelines:
-
-- Johan Gustafsson (Australian BioCommons, University of Melbourne) [@supernord](https://github.com/supernord)
-- Brian Davis (National Computational Infrastructure) [@Davisclan](https://github.com/Davisclan)
-- Marco de la Pierre (Pawsey Supercomputing Centre) [@marcodelapierre](https://github.com/marcodelapierre)
-- Audrey Stott (Pawsey Supercomputing Centre) [@audreystott](https://github.com/audreystott)
-- Sarah Beecroft (Pawsey Supercomputing Centre) [@SarahBeecroft](https://github.com/SarahBeecroft)
-- Matthew Downton (National Computational Infrastructure) [@mattdton](https://github.com/mattdton)
-- Richard Edwards (University of New South Wales) [@cabbagesofdoom](https://github.com/cabbagesofdoom)
-- Tracy Chew (University of Sydney) [@tracychew](https://github.com/tracychew)
-- Georgina Samaha (University of Sydney) [@georgiesamaha](https://github.com/georgiesamaha)
-
+This doco repository based on documentation template : https://github.com/AustralianBioCommons/doc_guidelines
 
 
