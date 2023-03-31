@@ -39,4 +39,8 @@ Single sample workflow:
 https://usegalaxy.org.au/u/s.williams/w/copy-of-scrnaseqcountsmatrixtoqc  
 
  
-~![test](./images/workflow_diagram_large.jpgimages/)
+![test](./images/workflow_diagram_large.jpg)
+
+
+
+
