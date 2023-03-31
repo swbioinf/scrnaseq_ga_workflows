@@ -1,16 +1,17 @@
 scRNAseq Processing Workflows
 ===========
 
-  - [Description](#description)
-  - [Diagram](#diagram)
+  - [Analysis overview](#analysis-overview)
+  - [Example output](#example-output)
   - [User guide](#user-guide)
+      + [Running a single sample workflow](#running-a-single-sample-workflow)
+      + [Running a multi sample experiment](#running-a-multi-sample-experiment)
+      + [Next steps](#next-steps)
   - [Background and Tutorials](#background-and-tutorials)
   - [Licence(s)](#licences)
   - [Acknowledgements/citations/credits](#acknowledgementscitationscredits)
 
 ---
-
-# Description
 
 This document describes how to use some scanpy-based scRNAseq workflows on galaxy Australia. 
 
@@ -87,7 +88,7 @@ This brings up the history of workflow invocations. This particular workflow run
 ![workflow invocations screen](./images/screen_invocations.png)
 
 
-## Running a multi-sample workflow
+## Running a multi sample experiment
 
 With multi-sample experiments, each sample is loaded independently and then combined. The overall method is the same, but the QC and processing steps are run separately. 
 
