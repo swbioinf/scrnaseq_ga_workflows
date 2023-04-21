@@ -161,6 +161,23 @@ The AnnData object generated is ready for analysis! Options include
 Note that there are toolkits other than scanpy (e.g. Seurat, SingleCellExperiment objects) which may not be directly compatible without conversions.
 
 
+
+## STAR Solo vs Cell Ranger
+
+If you are unable to use cellranger, an alternate version of the workflow use STAR solo (which uses a MIT liscence and can be configured to support different sequencing technologies)
+
+* Your fastq files
+* Whitelist files: The list of expected barcodes in the kit - which varys by technology and chemistry. For 10X chromium data see here; https://kb.10xgenomics.com/hc/en-us/articles/115004506263-What-is-a-barcode-whitelist-
+* Genome and matching annotation reference (see below).
+
+StarSOLO will require a genome sequence file (fasta format), and a .gtf or .gff file of the gene positions. Take care to ensure these are from the same genome version. A good source of suitable refernece/annotation pairs for a wide range of species is the [ensembl download index](https://asia.ensembl.org/info/data/ftp/index.html). For example, human reference data at ensembl v109:
+    - GRCH38 primary assembly: [Homo_sapiens.GRCh38.dna_sm.primary_assembly.fa.gz](https://ftp.ensembl.org/pub/release-109/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna_sm.primary_assembly.fa.gz)
+    - Gene Annotation : [Homo_sapiens.GRCh38.109.gtf.gz](https://ftp.ensembl.org/pub/release-109/gtf/homo_sapiens/Homo_sapiens.GRCh38.109.gtf.gz)
+
+You can supply links to that data direclty to a galaxy history via `upload data > Paste/Fetch data`, so there's no need to download/upload large files from your computer. And since you'll likely want to reuse the same refernece in new analyses, [its possible to copy to new histories as needed](https://training.galaxyproject.org/training-material/faqs/galaxy/histories_copy_dataset.html)
+
+Note that STARsolo will not produce a .cloupe object for the cell loupe browser.
+
 ---
 
 # Background and Tutorials 
@@ -176,6 +193,24 @@ There are many general resources online about the princials of single cell analy
 ---
 
 # License(s)
+
+
+Note that Cellranger is subject to a custom licence: https://github.com/10XGenomics/cellranger/blob/master/LICENSE Notably, it can only be used with 10X derived data. Any use of these workflows that use these cellRanger must adhere to that licence. 
+
+An alternative option is the STARsolo workflow, distributed under an MIT licence. 
+
+Otherwise, useage of these workflows is depenant on the (generally permissive) licences of the underlying tools and platforms; including;
+
+* Cell Ranger : https://github.com/10XGenomics/cellranger/blob/master/LICENSE
+* STARSolo : https://github.com/alexdobin/STAR/blob/master/LICENSE
+* Galaxy : https://galaxyproject.org/admin/license/
+* Galaxy australia terms of service: https://site.usegalaxy.org.au/about#terms-of-service
+* Scanpy : https://github.com/scverse/scanpy/blob/master/LICENSE\
+* Scanpy Scripts: https://github.com/ebi-gene-expression-group/scanpy-scripts/blob/develop/LICENSE
+
+
+
+
 
 ---
 
