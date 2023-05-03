@@ -195,7 +195,7 @@ There are many general resources online about the princials of single cell analy
 # License(s)
 
 
-Note that Cellranger is subject to a custom licence: https://github.com/10XGenomics/cellranger/blob/master/LICENSE Notably, it can only be used with 10X derived data. Any use of these workflows that use these cellRanger must adhere to that licence. 
+Note that Cellranger is subject to a [custom licence](https://github.com/10XGenomics/cellranger/blob/master/LICENSE). Most notably, it can only be used with 10X technology. Any use of these workflows that use these cellRanger must adhere to that licence. 
 
 An alternative option is the STARsolo workflow, distributed under an MIT licence. 
 
