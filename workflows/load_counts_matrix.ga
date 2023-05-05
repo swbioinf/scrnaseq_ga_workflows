@@ -106,7 +106,13 @@
             "tool_version": null,
             "type": "parameter_input",
             "uuid": "c642d08d-4fb4-4e0b-baa1-f42baa48d6ba",
-            "workflow_outputs": []
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "f3aecab3-27ac-43e2-832e-555fed612ae2"
+                }
+            ]
         },
         "4": {
             "annotation": "",
